@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>ServletContextDemo1</display-name>
+	<context-param>
+		<param-name>userName</param-name>
+		<param-value>admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>userPassword</param-name>
+		<param-value>cyber@123</param-value>
+	</context-param>
+	
+	
+	<servlet>
+		<servlet-name>bank</servlet-name>
+		<servlet-class>controller.BankServer</servlet-class>
+		<init-param>
+			<param-name>pin</param-name>
+			<param-value>6523283</param-value>
+		</init-param>
+		<init-param>
+			<param-name>server-admin</param-name>
+			<param-value>admin@7654</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>bank</servlet-name>
+	<url-pattern>/serverDetails</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>adminLogin.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>AdminLogin</display-name>
+		<servlet-name>AdminLogin</servlet-name>
+		<servlet-class>controller.AdminLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminLogin</servlet-name>
+		<url-pattern>/AdminLogin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FetchCourse</display-name>
+		<servlet-name>FetchCourse</servlet-name>
+		<servlet-class>controller.FetchCourse</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FetchCourse</servlet-name>
+		<url-pattern>/FetchCourse</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>BankServer</display-name>
+		<servlet-name>BankServer</servlet-name>
+		<servlet-class>controller.BankServer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BankServer</servlet-name>
+		<url-pattern>/BankServer</url-pattern>
+	</servlet-mapping>
+</web-app>
